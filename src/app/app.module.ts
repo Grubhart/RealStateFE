@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RealStateComponent } from './real-state/real-state.component';
+import {isMetadataImportedSymbolReferenceExpression} from '@angular/compiler-cli';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +13,8 @@ import { RealStateComponent } from './real-state/real-state.component';
     RealStateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

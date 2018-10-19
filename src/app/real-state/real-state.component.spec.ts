@@ -10,7 +10,7 @@ describe('RealStateComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ RealStateComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
