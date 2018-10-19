@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # RealStateFE
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.1.
@@ -26,6 +26,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# RealStateFE
->>>>>>> 0fb2b1fa8a9ba2ff2db2b997bffe07d37309d2b3
