@@ -9,9 +9,13 @@ import {STATES} from '../mock-states';
 })
 export class RealStateComponent implements OnInit {
 
-  selectedHero: RealState = {
+  selectedState: RealState = {
     rowId: 1,
-    name: 'Windstorm'
+    address: 'Windstorm',
+    specialOffer: 'yes',
+    specialFlag: 'X',
+    realStateId: 1,
+    name: 'name'
   };
   states = STATES;
   constructor() { }
@@ -20,6 +24,6 @@ export class RealStateComponent implements OnInit {
   }
 
   onSelect(state: RealState): void {
-    this.selectedHero = state;
+    this.selectedState = state;
   }
 }

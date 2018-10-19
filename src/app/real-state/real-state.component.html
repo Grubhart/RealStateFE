@@ -3,17 +3,18 @@
   <div><span>id: </span>{{selectedState.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="selectedState.name" placeholder="name">
+      <input [(ngModel)]="selectedState.address" placeholder="address">
     </label>
   </div>
 </div>
 
 <h2>My States</h2>
+
 <ul class="states">
   <li *ngFor="let state of states"
       [class.selected]="state === selectedState"
       (click)="onSelect(state)" >
-    <span class="badge">{{state.rowId}}</span> {{state.name}}
+    <span class="badge">{{state.rowId}}</span> {{state.address}}
   </li>
 </ul>
 
