@@ -13,12 +13,6 @@ export class RealStateService {
   constructor(private http: HttpClient) {
 
   }
-  getStates(): Observable<RealState[]> {
-    return this.http.get<RealState[]>(this.realStateUrl)
-      .pipe(
-        catchError(this.handleError('getStates', []))
-      );
-  }
 
   getStates(query: string, specialOffer: boolean): Observable<RealState[]> {
     return this.http.get<RealState[]>(this.realStateUrl.concat('?address=')

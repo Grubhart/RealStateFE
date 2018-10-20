@@ -19,9 +19,6 @@ export class RealStateComponent implements OnInit {
     this.specialOffer = false;
     this.search();
   }
-  getStates(): void {
-    this.realStateService.getStates().subscribe(states => this.realStates = states);
-  }
 
   search(): void {
     this.realStateService.getStates(this.query, this.specialOffer).subscribe(states => this.realStates = states);
