@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RealState} from '../real-state';
+import {RealStateService} from '../real-state.service';
+import {Observable, of} from 'rxjs';
 import {STATES} from '../mock-states';
 
 @Component({
@@ -17,13 +19,17 @@ export class RealStateComponent implements OnInit {
     realStateId: 1,
     name: 'name'
   };
-  states = STATES;
-  constructor() { }
+  states: RealState[];
+  constructor( private realStateService: RealStateService) { }
 
   ngOnInit() {
+    this.getStates();
   }
 
   onSelect(state: RealState): void {
     this.selectedState = state;
+  }
+  getStates(): void {
+    this.realStateService.getStates().subscribe(states => this.states = states);
   }
 }

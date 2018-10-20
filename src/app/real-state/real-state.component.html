@@ -1,3 +1,4 @@
+
 <div *ngIf="selectedState">
   <h2>{{selectedState.name | uppercase}} Details</h2>
   <div><span>id: </span>{{selectedState.id}}</div>
@@ -8,14 +9,16 @@
   </div>
 </div>
 
-<h2>My States</h2>
+<h2>My Houses</h2>
 
-<ul class="states">
-  <li *ngFor="let state of states"
-      [class.selected]="state === selectedState"
-      (click)="onSelect(state)" >
-    <span class="badge">{{state.rowId}}</span> {{state.address}}
-  </li>
-</ul>
-
+<table class="states">
+  <tr>
+    <th>rowId</th>
+    <th>address</th>
+  </tr>
+  <tr *ngFor="let state of states">
+    <td>{{state.rowId}}</td>
+    <td>{{state.address}}</td>
+  </tr>
+</table>
 
