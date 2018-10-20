@@ -1,10 +1,9 @@
 
-<div *ngIf="selectedState">
-  <h2>{{selectedState.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedState.id}}</div>
+<div>
+  <h2> search</h2>
   <div>
-    <label>name:
-      <input [(ngModel)]="selectedState.address" placeholder="address">
+    <label>
+      <input >
     </label>
   </div>
 </div>
@@ -15,10 +14,14 @@
   <tr>
     <th>rowId</th>
     <th>address</th>
+    <th>special offer</th>
+    <th>special flag</th>
   </tr>
   <tr *ngFor="let state of states">
     <td>{{state.rowId}}</td>
     <td>{{state.address}}</td>
+    <td>{{state.specialOffer}}</td>
+    <td>{{state.specialFlag}}</td>
   </tr>
 </table>
 

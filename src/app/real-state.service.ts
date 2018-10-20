@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {RealState} from './real-state';
-import {STATES} from './mock-states';
 import {Observable, of} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
@@ -8,12 +7,13 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class RealStateService {
+  private realStateUrl = 'http://localhost:8080/search?address=55&specialOffer=false';
 
   constructor(private http: HttpClient) {
 
   }
   getStates(): Observable<RealState[]> {
-    return of(STATES);
+    return this.http.get<RealState[]>(this.realStateUrl);
   }
 }
 
