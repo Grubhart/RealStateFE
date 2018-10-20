@@ -3,7 +3,9 @@
   <h2> search</h2>
   <div>
     <label>
-      <input >
+      <input [(ngModel)]="query" placeholder="query">
+      <input [(ngModel)]="specialOffer" type="checkbox">
+      <button (click)="search()"> search</button>
 
     </label>
   </div>

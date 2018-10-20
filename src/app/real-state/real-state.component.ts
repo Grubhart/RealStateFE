@@ -8,26 +8,22 @@ import {RealStateService} from '../real-state.service';
   styleUrls: ['./real-state.component.css']
 })
 export class RealStateComponent implements OnInit {
-
-  selectedState: RealState = {
-    rowId: 1,
-    address: 'Windstorm',
-    specialOffer: 'yes',
-    specialFlag: 'X',
-    realStateId: 1,
-    name: 'name'
-  };
   realStates: RealState[];
-  constructor( private realStateService: RealStateService) { }
+  query: string;
+  specialOffer: boolean;
 
-  ngOnInit() {
-    this.getStates();
+  constructor(private realStateService: RealStateService) {
   }
 
-  onSelect(state: RealState): void {
-    this.selectedState = state;
+  ngOnInit() {
+    this.specialOffer = false;
+    this.search();
   }
   getStates(): void {
     this.realStateService.getStates().subscribe(states => this.realStates = states);
+  }
+
+  search(): void {
+    this.realStateService.getStates(this.query, this.specialOffer).subscribe(states => this.realStates = states);
   }
 }

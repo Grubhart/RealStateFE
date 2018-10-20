@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import {RealState} from './real-state';
 import {Observable, of} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {catchError,map,tap} from 'rxjs/operators';
+import {catchError, map, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RealStateService {
-  private realStateUrl = 'http://localhost:8080/search?address=55&specialOffer=false';
+  private realStateUrl = 'http://localhost:8080/search';
 
   constructor(private http: HttpClient) {
 
@@ -16,7 +16,16 @@ export class RealStateService {
   getStates(): Observable<RealState[]> {
     return this.http.get<RealState[]>(this.realStateUrl)
       .pipe(
-        catchError(this.handleError('getStates',[]))
+        catchError(this.handleError('getStates', []))
+      );
+  }
+
+  getStates(query: string, specialOffer: boolean): Observable<RealState[]> {
+    return this.http.get<RealState[]>(this.realStateUrl.concat('?address=')
+                                      .concat(query).concat('&&specialOffer=')
+                                      .concat(specialOffer.toString()))
+      .pipe(
+        catchError(this.handleError('getStates', []))
       );
   }
   /**
