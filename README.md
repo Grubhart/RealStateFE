@@ -6,23 +6,33 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+to run can use:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ng serve --open
 
-## Build
+the project show a single search form
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+you have only one textbox but you can make complex search using keywords:
 
-## Running unit tests
+stateName : state name i.e. New York, Florida, etc
+stateAbr : state abreviature i.e NY, FL, CA, etc
+streetAddress : street address i.e 55 cyril street
+city : city name i.e. san francisco, miami, etc
+zipCode : zipCode i.e 555555
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+you can combine different keywords 
+example:
+streetAddress=55;stateAbr=fl
 
-## Running end-to-end tests
+that show all properties that have 55 in the street Address and being in Florida
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+also you can use a generic text to use a global search
+example:
+55  
 
-## Further help
+that show any properties that have 55 in streetAddress, State, zip code , etc
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+you can combine them example
+55;stateAbr=NY
 
+have Fun!!!
