@@ -32,7 +32,7 @@ example:
 
 that show any properties that have 55 in streetAddress, State, zip code , etc
 
-you can combine them example
-55;stateAbr=NY
+you can combine them, and use multiple options for each criteria separated by comma "," example
+55;stateAbr=NY,FL
 
 have Fun!!!
